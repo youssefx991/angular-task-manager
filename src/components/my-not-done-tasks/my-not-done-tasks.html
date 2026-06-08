@@ -1,0 +1,18 @@
+<p>my-not-done-tasks works!</p>
+
+@for (task of TasksFromList; track task.id) {
+<div class="card">
+  <div class="card-header bg-dark-subtle">
+    Not Done Tasks Card
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{task.title}}</h5>
+    <p class="card-text">{{task.description}}</p>
+    <p class="card-text">Status: {{task.isDone ? 'Done' : 'Not Done'}}</p>
+    <button type="button" (click)="markAsDone(task)" class="btn btn-success m-1">Mark as Done</button>
+    <button type="button" (click)="updateTask(task)" class="btn btn-primary m-1">Update</button>
+    <button type="button" (click)="markAsNotDone(task)" class="btn btn-warning m-1">Mark as Not Done</button>
+    <button type="button" (click)="deleteTask(task)" class="btn btn-danger m-1">Delete</button>
+  </div>
+</div>
+}

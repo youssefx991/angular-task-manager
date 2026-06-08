@@ -1,0 +1,63 @@
+{
+  "tasks": [
+    {
+      "id": "e1c3f6b9",
+      "title": "Build study flashcards ",
+      "description": "Create flashcards for Angular directives, services, and dependency injection.",
+      "priority": "medium",
+      "dueDate": "2026-06-13T00:00:00.000Z",
+      "category": "study",
+      "tags": [
+        "angular",
+        "flashcards",
+        "revision"
+      ],
+      "isDone": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "demo",
+      "email": "demo@example.com",
+      "password": "demo123"
+    },
+    {
+      "id": "2",
+      "username": "student",
+      "email": "student@example.com",
+      "password": "student123"
+    },
+    {
+      "id": "3",
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "admin123"
+    },
+    {
+      "username": "youssef",
+      "email": "youssef@gmail.com",
+      "password": "youssef123",
+      "id": "pFJ7A--gSiA"
+    },
+    {
+      "id": "PB3RCooOrNc",
+      "username": "roze",
+      "email": "roze@gmail.com",
+      "password": "roze123"
+    },
+    {
+      "id": "pcgsiqhYFPQ",
+      "username": "ali",
+      "email": "ali@gmail.com",
+      "password": "ali123"
+    },
+    {
+      "id": "DsIUipTbmpI",
+      "username": "medhat",
+      "email": "medhat@gmail.com",
+      "password": "medhat123"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

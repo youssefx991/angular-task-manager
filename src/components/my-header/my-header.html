@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-md bg-primary-subtle">
+  <div class="container-fluid">
+    <div class="navbar-nav">
+      <a class="nav-link" routerLink="home" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a class="nav-link" routerLink="slider" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: false }">Slider</a>
+      <a class="nav-link" routerLink="form" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: false }">Form</a>
+      <a class="nav-link" routerLink="list" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: false }">Lists</a>
+    </div>
+
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" routerLink="signup" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: false }">Sign Up</a>
+      <a class="nav-link" routerLink="login" routerLinkActive="bg-dark text-white" [routerLinkActiveOptions]="{ exact: false }">Log In</a>
+      <a class="nav-link" routerLink="" (click)="logout()">Log Out</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,122 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <div class="card shadow">
+        <div class="card-body">
+          <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+            <h2 class="text-center mb-4">
+              @if (isEditing) {
+              Update Task
+              } @else {
+              Add New Task
+              }
+            </h2>
+
+            <div class="mb-3">
+              <label class="form-label">Task Title</label>
+              <input class="form-control" placeholder="Task Title" formControlName="title">
+            </div>
+            @if (this.taskForm.get('title')?.invalid && this.taskForm.get('title')?.touched) {
+            <div class="text-danger">
+              Task title is required.
+            </div>
+            }
+            <div class="mb-3">
+              <label class="form-label">Task Description</label>
+              <textarea rows="3" class="form-control" placeholder="Task Description" formControlName="description">
+            </textarea>
+            </div>
+            @if (this.taskForm.get('description')?.invalid && this.taskForm.get('description')?.touched) {
+            <div class="text-danger mt-1">
+              Task description is required.
+            </div>
+            }
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Priority</label>
+                <select class="form-select" formControlName="priority">
+
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+
+                </select>
+              </div>
+              @if(this.taskForm.get('priority')?.invalid && this.taskForm.get('priority')?.touched) {
+              <div class="text-danger mt-1">
+                Task priority is required.
+              </div>
+              }
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Due Date</label>
+                <input type="date" class="form-control" formControlName="dueDate">
+              </div>
+              @if(this.taskForm.get('dueDate')?.invalid && this.taskForm.get('dueDate')?.touched) {
+              <div class="text-danger mt-1">
+                Task due date is required.
+              </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+
+              <select class="form-select" formControlName="category">
+
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="study">Study</option>
+
+              </select>
+            </div>
+            @if(this.taskForm.get('category')?.invalid && this.taskForm.get('category')?.touched) {
+            <div class="text-danger mt-1">
+              Task category is required.
+            </div>
+            }
+            <div class="mb-3">
+              <label class="form-label">Tags</label>
+
+              <input class="form-control" placeholder="Task Tags (space separated)" formControlName="tags">
+            </div>
+            @if(this.taskForm.get('tags')?.invalid && this.taskForm.get('tags')?.touched) {
+            <div class="text-danger mt-1">
+              Task tags are required.
+            </div>
+            }
+            <div class="form-check mb-3">
+
+              <input type="checkbox" class="form-check-input" id="isDone" formControlName="isDone">
+
+              <label for="isDone" class="form-check-label">
+
+                Completed
+
+              </label>
+
+            </div>
+
+            @if (error.state) {
+            <div class="alert alert-danger">
+              {{ error.message }}
+            </div>
+            }
+
+            <button class="btn btn-primary w-100" [disabled]="taskForm.invalid" type="submit">
+
+              @if (isEditing) {
+              Update Task
+              } @else {
+              Add Task
+              }
+
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

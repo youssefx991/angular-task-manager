@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-md bg-primary-subtle">
+  <div class="container-fluid">
+    <div class="navbar-nav ms-auto me-auto">
+      <button type="button" class="nav-link" (click)="SwitchTab(TabChoice.ALL)">All Tasks </button>
+    </div>
+    <div class="navbar-nav ms-auto me-auto">
+      <button type="button" class="nav-link" (click)="SwitchTab(TabChoice.DONE)">Done Tasks </button>
+    </div>
+    <div class="navbar-nav ms-auto me-auto">
+      <button type="button" class="nav-link" (click)="SwitchTab(TabChoice.NOT_DONE)">Not Done Tasks </button>
+    </div>
+  </div>
+</nav>

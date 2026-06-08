@@ -1,0 +1,71 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow">
+
+        <div class="card-body">
+
+          <h2 class="text-center mb-4">Log In</h2>
+
+          <form #loginForm="ngForm" (ngSubmit)="onLogIn(loginForm)">
+
+            <div class="mb-3">
+              <label for="username" class="form-label">
+                Username
+              </label>
+
+              <input
+                id="username"
+                type="text"
+                name="username"
+                class="form-control"
+                [(ngModel)]="username"
+                required
+                minlength="3"
+                #usernameInput="ngModel">
+
+              @if (usernameInput.invalid && usernameInput.touched) {
+                <div class="text-danger mt-1">
+                  Username must be at least 3 characters.
+                </div>
+              }
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">
+                Password
+              </label>
+
+              <input
+                id="password"
+                type="password"
+                name="password"
+                class="form-control"
+                [(ngModel)]="password"
+                required
+                minlength="6"
+                #passwordInput="ngModel">
+
+              @if (passwordInput.invalid && passwordInput.touched) {
+                <div class="text-danger mt-1">
+                  Password must be at least 6 characters.
+                </div>
+              }
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="loginForm.invalid">
+              Log In
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

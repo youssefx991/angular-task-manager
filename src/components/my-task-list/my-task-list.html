@@ -1,0 +1,17 @@
+<app-my-tabs (SendTabChoiceToList)="onTabChoice($event)"></app-my-tabs>
+<div id="my-task-list">
+  <p>my-task-list works!</p>
+</div>
+
+@if (choice() === TabChoice.ALL) {
+<app-my-all-tasks [TasksFromList]="displayedTasks()"
+  (SendTaskActionObjToList)="ReceiveTaskActionObjFromFilteredList($event)"></app-my-all-tasks>
+}
+@else if (choice() === TabChoice.DONE) {
+<app-my-done-tasks [TasksFromList]="displayedTasks()"
+  (SendTaskActionObjToList)="ReceiveTaskActionObjFromFilteredList($event)"></app-my-done-tasks>
+}
+@else if (choice() === TabChoice.NOT_DONE) {
+<app-my-not-done-tasks [TasksFromList]="displayedTasks()"
+  (SendTaskActionObjToList)="ReceiveTaskActionObjFromFilteredList($event)"></app-my-not-done-tasks>
+}
